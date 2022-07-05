@@ -1,4 +1,4 @@
-#include<main -h>
+#include "main.h"
 /**
  *main - print puncher
  *Return: 0
@@ -16,6 +16,6 @@ _putchar('h');
 _putchar('a');
 _putchar('r');
 
-return (10);
+return (0);
 }
 
