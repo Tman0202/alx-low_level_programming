@@ -1,27 +1,26 @@
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 #include "main.h"
 
 /**
-*generationRandomPassword - Randomly generate passwords.
-*@N: password length.
-*Decription: Function to randomly generates password.
-*Return: nothing
-*/
-
-void generationRandomPassword(int N)
+ * print_number - prints an integer
+ * @n: integer to be printed
+ */
+void print_number(int n)
 {
-	char list[] = "1234567890qwertyuiopasdfghjklzxcvbnm!@#$%^&*()_- +=QWERTYUIOPASDFGHJKLZXCVBNM[]{};':\"<>,.?/|";
+	unsigned int n1;
 
-	int i;
-	
-	srand(time(NULL));
-
-	for (i = 0; i < N; i++)
+	if (n < 0)
 	{
-		printf("%c", list[rand() % (sizeof(list) - 1)]);
+		n1 = -n;
+		_putchar('-');
+	} else
+	{
+		n1 = n;
 	}
-	printf("\n");
+
+	if (n1 / 10)
+	{
+		print_number(n1 / 10);
+	}
+
+	_putchar((n1 % 10) + '0');
 }
