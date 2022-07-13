@@ -1,35 +1,36 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include "holberton.h"
 
 /**
- * main - program that generates random valid
- * passwords for the program 101-crackme
- *
- * Return: Always 0 (Success)
+ * print_number - prints an integer.
+ * @n: input integer.
+ * Return: no return.
  */
-int main(void)
+
+void print_number(int n)
 {
- int pass[100];
- int i, sum, n;
+	unsigned int m, d, count;
 
- sum = 0;
+	if (n < 0)
+	{
+		_putchar(45);
+		m = n * -1;
+	}
+	else
+	{
+		m = n;
+	}
 
- srand(time(NULL));
+	d = m;
+	count = 1;
 
- for (i = 0; i < 100; i++)
- {
-  pass[i] = rand() % 78;
-  sum += (pass[i] + '0');
-  putchar(pass[i] + '0');
-  if ((2772 - sum) - '0' < 78)
-  {
-   n = 2772 - sum - '0';
-   sum += n;
-   putchar(n + '0');
-   break;
-  }
- }
+	while (d > 9)
+	{
+		d /= 10;
+		count *= 10;
+	}
 
- return (0);
+	for (; count >= 1; count /= 10)
+	{
+		_putchar(((m / count) % 10) + 48);
+	}
 }
