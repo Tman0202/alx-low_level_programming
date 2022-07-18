@@ -1,5 +1,5 @@
-#include <main.h>
-
+#include "main.h"
+#include <string.h>
 /**
  *_memcpy - memory area of srs
  *@dest: memory area to copy to
